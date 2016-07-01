@@ -1,0 +1,58 @@
+#header{
+	width: 100%;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 10;
+
+	.group-header{
+		width: 100%;
+		float: left;
+		background-color: #FFF;
+		padding: 1rem;
+
+		ul{
+			display: table;
+			width: 100%;
+
+			li{
+				display: table-cell;
+				vertical-align: middle;
+
+				&.item-menu{
+
+					a{
+						width: 35px;
+						height: 22px;
+						overflow: hidden;
+						display: block;
+						border-bottom: 2px solid #000;
+						border-top: 2px solid #000;
+						position: relative;
+						text-indent: -999em;
+
+						&:before{
+							content: '';
+							position: absolute;
+							width: 100%;
+							top: 8px;
+							left: 0;
+							border-top: 2px solid #000;
+						}
+					}
+					
+				}
+
+				&.item-logo{
+					width: 80%;
+				}
+			}
+		}
+	}
+}
+
+
+#main-menu{
+	display: none
+}
