@@ -1,5 +1,8 @@
 @import 'config/normalize';
 @import 'config/reset';
 
+
 // layout
+@import 'modules/geral';
 @import 'modules/header';
+@import 'modules/main-banner';

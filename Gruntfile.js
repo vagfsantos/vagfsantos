@@ -62,14 +62,14 @@ module.exports = function(grunt){
 		},
 
 		//image min
-		imagemin: { 
-		    dynamic: {  
-		      	files: [{
-		        	expand: true,              
-		        	cwd: 'assets/images/', 
-		        	src: ['**/*.{png,jpg,gif}'],   
-		        	dest: 'build/images/'                 
-		      	}]
+		image: { 
+		    dynamic: {
+		        files: [{
+		          	expand: true,
+		          	cwd: 'assets/images/',
+		          	src: ['**/*.{png,jpg,gif,svg}'],
+		          	dest: 'build/images/'
+		        }]
 		    }
 		},
 
@@ -77,7 +77,9 @@ module.exports = function(grunt){
 		sprite:{
 		    all:{
 		        src: 'assets/images/sprite/*.png',
+		        //retinaSrcFilter: ['assets/images/sprite/*@2x.png'],
 		        dest: 'build/images/sprite.png',
+		        //retinaDest: 'build/images/sprite.retina@2x.png',
 		        destCss: 'assets/scss/_sprite.scss'
 		    }
 		},
@@ -108,8 +110,8 @@ module.exports = function(grunt){
 		  	},
 
 		  	images: {
-		  		files: 'assets/images/**/*.{png,jpg,gif}',
-		  		tasks: ['imagemin'],
+		  		files: 'assets/images/**/*.jpg',
+		  		tasks: ['image'],
 		  		options: {
 		  	 	event: ['all']
 		  		},
@@ -123,12 +125,12 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.loadNpmTasks('grunt-image');
 	grunt.loadNpmTasks('grunt-spritesmith');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-jslint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// register tasks
-	grunt.registerTask('default', ['clean', 'sass', 'cssmin', 'jslint', 'uglify', 'imagemin', 'sprite', 'watch']);
+	grunt.registerTask('default', ['clean', 'sprite', 'sass', 'cssmin', 'jslint', 'uglify','image', 'watch']);
 }
