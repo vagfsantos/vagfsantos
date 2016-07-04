@@ -12,7 +12,7 @@
 		width: 100%;
 		float: left;
 		background-image: linear-gradient(to bottom, #000, rgba(#000,0) 75%);
-		padding: 1rem;
+		padding: 1rem 3rem;
 
 		ul{
 			display: table;
@@ -33,6 +33,15 @@
 						border-top: 2px solid #fff;
 						position: relative;
 						text-indent: -999em;
+						@include animation( .3s ease-in );
+
+						&:hover{
+							border-color: #01dbee;
+
+							&:before{
+								border-color: #01dbee;
+							}
+						}
 
 						&:before{
 							content: '';
@@ -41,6 +50,7 @@
 							top: 8px;
 							left: 0;
 							border-top: 2px solid #fff;
+							@include animation( .3s ease-in );
 						}
 					}
 					
@@ -59,6 +69,26 @@
 						padding: 1em 85px;
 						position: relative;
 						display: inline-block;
+						@include animation( .3s ease-in );
+
+						&:hover{
+							color: #01dbee;
+							&:after{
+								left: 18%;
+								right: 20%;
+							}
+						}
+						
+						&:after{
+							content:'';
+							position: absolute;
+							top: 18px;
+							left: 50%;
+							right: 50%;
+							border-top: 2px solid #01dbee;
+							@include shadow( 0px 0px 10px rgba(0, 236, 235, 0.8) );
+							@include animation( .3s cubic-bezier(0.78, 0.85, 0, 1.18) );
+						}
 
 						&:before{
 							content: '';
@@ -79,10 +109,11 @@
 					font-size: .8em;
 					letter-spacing: .5em;
 					font-weight: 300;
-					transition: .3s ease-out;
 					position: relative;
+					@include animation( .3s ease-in );
 
 					&:hover{
+						color: #01dbee;
 						&:after{
 							left: 30%;
 						}
@@ -95,8 +126,8 @@
 						right: 0;
 						left: 100%;
 						border-top: 3px solid #01dbee;
-						box-shadow: 0px 0px 10px rgba(0, 236, 235, 0.8);
-						transition: .3s cubic-bezier(0.78, 0.85, 0, 1.18);
+						@include shadow( 0px 0px 10px rgba(0, 236, 235, 0.8) );
+						@include animation( .3s cubic-bezier(0.78, 0.85, 0, 1.18) );
 					}
 
 					&:before{

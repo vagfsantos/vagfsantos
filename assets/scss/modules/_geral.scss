@@ -1,0 +1,77 @@
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+	font-family: "proxima-nova";
+}
+
+html, body{
+	font-family: "proxima-nova";
+}
+
+body{
+	background-color: #000;
+	color: #fff;
+}
+
+a{
+	text-decoration: none;
+}
+
+.container{
+	width: 100%;
+	padding: 0 3rem;
+}
+
+.subcontainer{
+	width: 100%;
+	padding: 1.5rem;
+	border: 2px solid #545454;
+	display: table;
+}
+
+.description-group{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.img-group{
+	display: table-cell;
+	vertical-align: middle;
+
+	padding: 1rem;
+	border: 2px solid #545454;
+
+	img{
+		width: 100%;
+		height: auto;
+	}
+}
+
+.top-table-align{
+	vertical-align: top;
+
+	h3{
+		line-height: 2em;
+	}
+}
+
+.bottom-table-align{
+	vertical-align: bottom;
+}
+
+.title-section{
+	text-transform: uppercase;
+	display: block;
+
+	&.bold{
+		font-weight: 900;
+		font-size: 3.5rem;
+	}
+
+	&.thin{
+		font-weight: 300;
+		font-size: 2rem;
+		color: #545454;
+		letter-spacing: 1rem;
+	}
+}
+
