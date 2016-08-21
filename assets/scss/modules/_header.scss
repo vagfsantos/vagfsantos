@@ -57,7 +57,6 @@
 				}
 
 				&.item-logo{
-					width: 80%;
 					padding-left: 3em;
 
 					h1{
@@ -102,54 +101,61 @@
 					}
 				}
 
-				.github,
-				.linkedin{
-					color: #fff;
-					text-transform: uppercase;
-					font-size: .8em;
-					letter-spacing: .5em;
-					font-weight: 300;
-					position: relative;
-					@include animation( .3s ease-in );
+				&.item-social{
+					text-align: right;
+					width: 175px;
+					
+					.github,
+					.linkedin{
+						color: #fff;
+						text-transform: uppercase;
+						font-size: .8em;
+						letter-spacing: .5em;
+						font-weight: 300;
+						position: relative;
+						@include animation( .3s ease-in );
 
-					&:hover{
-						color: #01dbee;
+						&:hover{
+							color: #01dbee;
+							&:after{
+								left: 30%;
+							}
+						}
+
 						&:after{
-							left: 30%;
+							content: '';
+							position: absolute;
+							bottom: -1em;
+							right: 0;
+							left: 100%;
+							border-top: 3px solid #01dbee;
+							@include shadow( 0px 0px 10px rgba(0, 236, 235, 0.8) );
+							@include animation( .3s cubic-bezier(0.78, 0.85, 0, 1.18) );
+						}
+
+						&:before{
+							content: '';
+							overflow: hidden;
+							display: inline-block;
+							margin-bottom: -0.8em;
+							margin-right: 1em;
 						}
 					}
 
-					&:after{
-						content: '';
-						position: absolute;
-						bottom: -1em;
-						right: 0;
-						left: 100%;
-						border-top: 3px solid #01dbee;
-						@include shadow( 0px 0px 10px rgba(0, 236, 235, 0.8) );
-						@include animation( .3s cubic-bezier(0.78, 0.85, 0, 1.18) );
+					.linkedin{
+						&:before{
+							@include sprite($linkedin);
+						}
 					}
 
-					&:before{
-						content: '';
-						overflow: hidden;
-						display: inline-block;
-						margin-bottom: -0.8em;
-						margin-right: 1em;
+					.github{
+						&:before{
+							@include sprite($github);
+						}
 					}
 				}
 
-				.linkedin{
-					&:before{
-						@include sprite($linkedin);
-					}
-				}
-
-				.github{
-					&:before{
-						@include sprite($github);
-					}
-				}
+				
 			}
 		}
 	}
