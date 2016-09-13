@@ -154,6 +154,16 @@ a{
 			background-color: $get-in-touch-color;
 		}
 	}
+
+	&.not-avaiable{
+		border-color: $not-avaiable-color;
+		color: $not-avaiable-color;
+		cursor: not-allowed;
+
+		&:before{
+			background-color: transparent;
+		}
+	}
 }
 
 
