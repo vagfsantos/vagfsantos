@@ -5,7 +5,21 @@ module.exports = function(grunt){
 		clean: {
 		  build: {
 		    src: ['build']
+		  },
+
+		  deploy: {
+		    src: ['deploy']
 		  }
+		},
+
+		//deploy
+		copy:{
+			deploy:{
+				expand: true,
+				cwd: 'build/',
+			    src: '**',
+			    dest: 'deploy/'
+			}
 		},
 
 		// sass
@@ -116,6 +130,21 @@ module.exports = function(grunt){
 		  	 	event: ['all']
 		  		},
 		  	}
+		},
+
+		'string-replace': {
+		  	dist: {
+			    files: {
+			      'index.html': 'develop.html'
+				},
+
+			    options: {
+				    replacements: [{
+				        pattern: 'build/',
+				        replacement: 'deploy/'
+				    }]
+			    }
+		    }
 		}
 	});
 
@@ -130,7 +159,10 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-jslint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-string-replace');
 
 	// register tasks
-	grunt.registerTask('default', ['clean', 'sprite', 'sass', 'cssmin', 'jslint', 'uglify','image', 'watch']);
+	grunt.registerTask('build', ['clean:build', 'sprite', 'sass', 'cssmin', 'jslint', 'uglify','image']);
+	grunt.registerTask('default', ['build', 'watch']);
+	grunt.registerTask('deploy', ['build', 'clean:deploy', 'copy:deploy', 'string-replace']);
 }

@@ -188,7 +188,7 @@
 			a{
 				font-size: 1.2em;
 			    font-weight: 300;
-			    line-height: 2em;
+			    line-height: 4ex;
 			    text-transform: uppercase;
 			    letter-spacing: .3em;
 				color: $light-color;
@@ -197,6 +197,11 @@
 				&:hover{
 					color: $main-color;
 					padding-left: .5em;
+				}
+
+				&#close-menu{
+					text-indent: -1.5em;
+					display: block;
 				}
 			}
 		}
