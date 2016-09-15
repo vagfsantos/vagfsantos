@@ -648,7 +648,7 @@ The `sprites` mixin generates identical output to the CSS template
               position: absolute;
               left: 0;
               top: 0;
-              background-image: url(../../build/images/sprite.png);
+              background-image: url(../images/sprite.png);
               background-position: -119px 0px;
               width: 67px;
               height: 67px; }
@@ -700,12 +700,12 @@ The `sprites` mixin generates identical output to the CSS template
               margin-bottom: -0.8em;
               margin-right: 1em; }
           #header .group-header ul li.item-social .linkedin:before {
-            background-image: url(../../build/images/sprite.png);
+            background-image: url(../images/sprite.png);
             background-position: 0px -119px;
             width: 34px;
             height: 34px; }
           #header .group-header ul li.item-social .github:before {
-            background-image: url(../../build/images/sprite.png);
+            background-image: url(../images/sprite.png);
             background-position: -119px -67px;
             width: 35px;
             height: 35px; }
@@ -772,7 +772,7 @@ The `sprites` mixin generates identical output to the CSS template
       float: left;
       margin-top: -.3rem;
       margin-right: 1rem;
-      background-image: url(../../build/images/sprite.png);
+      background-image: url(../images/sprite.png);
       background-position: 0px 0px;
       width: 119px;
       height: 119px; }

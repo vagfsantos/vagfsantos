@@ -95,6 +95,13 @@ module.exports = function(grunt){
 		        dest: 'build/images/sprite.png',
 		        //retinaDest: 'build/images/sprite.retina@2x.png',
 		        destCss: 'assets/scss/_sprite.scss'
+		    },
+
+		    deploy:{
+		    	src: 'assets/images/sprite/*.png',
+		        dest: 'build/images/sprite.png',
+		        destCss: 'assets/scss/_sprite.scss',
+		        imgPath: '../images/sprite.png'
 		    }
 		},
 
@@ -140,7 +147,7 @@ module.exports = function(grunt){
 
 			    options: {
 				    replacements: [{
-				        pattern: 'build/',
+				        pattern: /build\/+/g,
 				        replacement: 'deploy/'
 				    }]
 			    }
@@ -162,7 +169,8 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-string-replace');
 
 	// register tasks
-	grunt.registerTask('build', ['clean:build', 'sprite', 'sass', 'cssmin', 'jslint', 'uglify','image']);
+	grunt.registerTask('build', ['clean:build', 'sprite:all', 'sass', 'cssmin', 'jslint', 'uglify','image']);
+	grunt.registerTask('beforeDeploy', ['clean:build', 'sprite:deploy', 'sass', 'cssmin', 'jslint', 'uglify','image']);
 	grunt.registerTask('default', ['build', 'watch']);
-	grunt.registerTask('deploy', ['build', 'clean:deploy', 'copy:deploy', 'string-replace']);
+	grunt.registerTask('deploy', ['beforeDeploy', 'clean:deploy', 'copy:deploy', 'string-replace']);
 }
