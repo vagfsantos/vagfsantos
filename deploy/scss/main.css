@@ -387,7 +387,7 @@ a {
 
 .container {
   width: 100%;
-  max-width: 1900px;
+  max-width: 1600px;
   margin-right: auto;
   margin-left: auto;
   padding: 0 3rem;
@@ -449,7 +449,8 @@ a {
     font-weight: 300;
     font-size: 2rem;
     color: #545454;
-    letter-spacing: 1rem; }
+    letter-spacing: 1rem;
+    margin-right: -.5em; }
 
 .btns-group {
   width: 90%; }
@@ -738,18 +739,22 @@ The `sprites` mixin generates identical output to the CSS template
       line-height: 4ex;
       text-transform: uppercase;
       letter-spacing: .3em;
-      color: #fff;
-      -webkit-transition: 0.2s;
-      -moz-transition: 0.2s;
-      -ms-transition: 0.2s;
-      -o-transition: 0.2s;
-      transition: 0.2s; }
+      color: #01dbee;
+      display: block; }
       #main-menu ul li a:hover {
-        color: #01dbee;
-        padding-left: .5em; }
+        text-decoration: underline; }
       #main-menu ul li a#close-menu {
         text-indent: -1.5em;
         display: block; }
+    #main-menu ul li span {
+      font-size: 1.2em;
+      font-weight: 700;
+      line-height: 2ex;
+      text-transform: uppercase;
+      letter-spacing: .3em;
+      color: #fff;
+      margin-top: 4ex;
+      display: block; }
 
 #banner-section {
   width: 100%;
@@ -865,6 +870,35 @@ The `sprites` mixin generates identical output to the CSS template
 #the-contributed-section .job-list .description-group {
   width: 100%;
   display: block; }
+
+.the-background-section .general-list ul li {
+  margin-top: 1em;
+  display: block;
+  padding: .8em 1em;
+  border: 1px solid #545454; }
+  .the-background-section .general-list ul li.highlight {
+    border-color: #ee014a; }
+  .the-background-section .general-list ul li.diff {
+    border-color: #8101ee; }
+  .the-background-section .general-list ul li.markee {
+    border-color: #01dbee; }
+  .the-background-section .general-list ul li .name-list {
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 11px;
+    display: block;
+    color: #404040; }
+  .the-background-section .general-list ul li p {
+    text-transform: uppercase; }
+    .the-background-section .general-list ul li p .info {
+      color: #404040; }
+    .the-background-section .general-list ul li p a {
+      color: #fff; }
+      .the-background-section .general-list ul li p a:hover {
+        text-decoration: underline; }
+    .the-background-section .general-list ul li p .description {
+      letter-spacing: .2em; }
 
 #the-experimental-section .job-list li {
   width: 30%;
