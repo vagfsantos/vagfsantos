@@ -15,6 +15,10 @@
                     border-color: $diff-color;
                 }
 
+                &.markee{
+                    border-color: $view-code-color;
+                }
+
                 .name-list{
                     font-size: 1.4em;
                     text-transform: uppercase;

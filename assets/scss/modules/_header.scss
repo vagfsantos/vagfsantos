@@ -191,18 +191,28 @@
 			    line-height: 4ex;
 			    text-transform: uppercase;
 			    letter-spacing: .3em;
-				color: $light-color;
-				@include animation(.2s);
+				color: $main-color;
+				display: block;
 
 				&:hover{
-					color: $main-color;
-					padding-left: .5em;
+					text-decoration: underline;
 				}
 
 				&#close-menu{
 					text-indent: -1.5em;
 					display: block;
 				}
+			}
+
+			span{
+				font-size: 1.2em;
+			    font-weight: 700;
+			    line-height: 2ex;
+			    text-transform: uppercase;
+			    letter-spacing: .3em;
+				color: $light-color;
+				margin-top: 4ex;
+				display: block;
 			}
 		}
 	}
