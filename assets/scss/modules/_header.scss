@@ -12,11 +12,24 @@
 		width: 100%;
 		float: left;
 		background-image: linear-gradient(to bottom, #000, rgba(#000,0) 75%);
-		padding: 1rem 3rem;
+		padding: 1ex 3em;
+		@include animation(.4s);
+
+		&.fixed{
+			background-color: rgba(0, 0, 0, 0.60);
+			padding: 1.2ex 3em;
+			border-bottom: 1px solid $main-color;
+
+			ul{
+				margin-top: 0;
+			}
+		}
 
 		ul{
 			display: table;
 			width: 100%;
+			margin-top: 10px;
+			@include animation(margin-top .4s);
 
 			li{
 				display: table-cell;
@@ -36,10 +49,10 @@
 						@include animation( .3s ease-in );
 
 						&:hover{
-							border-color: #01dbee;
+							border-color: $main-color;
 
 							&:before{
-								border-color: #01dbee;
+								border-color: $main-color;
 							}
 						}
 
@@ -65,13 +78,13 @@
 						font-weight: 300;
 						text-transform: uppercase;
 						color: #fff;
-						padding: 1em 85px;
+						padding: .8em 85px;
 						position: relative;
 						display: inline-block;
 						@include animation( .3s ease-in );
 
 						&:hover{
-							color: #01dbee;
+							color: $main-color;
 							&:after{
 								left: 18%;
 								right: 20%;
@@ -84,7 +97,7 @@
 							top: 18px;
 							left: 50%;
 							right: 50%;
-							border-top: 2px solid #01dbee;
+							border-top: 2px solid $main-color;
 							@include shadow( 0px 0px 10px rgba(0, 236, 235, 0.8) );
 							@include animation( .3s cubic-bezier(0.78, 0.85, 0, 1.18) );
 						}
@@ -116,7 +129,7 @@
 						@include animation( .3s ease-in );
 
 						&:hover{
-							color: #01dbee;
+							color: $main-color;
 							&:after{
 								left: 30%;
 							}
@@ -128,7 +141,7 @@
 							bottom: -1em;
 							right: 0;
 							left: 100%;
-							border-top: 3px solid #01dbee;
+							border-top: 3px solid $main-color;
 							@include shadow( 0px 0px 10px rgba(0, 236, 235, 0.8) );
 							@include animation( .3s cubic-bezier(0.78, 0.85, 0, 1.18) );
 						}
