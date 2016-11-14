@@ -1,0 +1,18 @@
+@import 'config/normalize';
+@import 'config/reset';
+@import 'config/mixins';
+@import 'config/variables';
+
+
+// layout
+@import 'modules/geral';
+@import 'modules/header';
+@import 'modules/main-banner';
+@import 'modules/the-lastest-section';
+@import 'modules/the-about-section';
+@import 'modules/the-professional-section';
+@import 'modules/the-skills-section';
+@import 'modules/the-contributed-section';
+@import 'modules/the-background-section';
+@import 'modules/the-experimental-section';
+

@@ -1,0 +1,65 @@
+#the-skills-section{
+    .subcontainer{
+        display: block;
+        float: left;
+    }
+
+    .description-group{
+        display: block;
+        width: 100%;
+        float: left;
+
+        .top-group{
+            .text{
+                display: inline-block;
+                width: 50%;
+                margin-left: 3em;
+            }
+        }
+
+        .skill-list{
+            width: 100%;
+            float: left;
+
+            ul{
+                width: 30%;
+                float: left;
+
+                &.left{
+                    text-align: left;
+                }
+
+                &.right{
+                    text-align: right;
+                }
+
+                &.center{
+                    text-align: center;
+                }
+
+                &:nth-child(2){
+                    margin: 0 5%;
+                }
+
+                li{
+                    margin-top: 1em;
+                    display: block;
+                    padding: .8em 1em;
+                    border: 1px solid $border-color;
+                    letter-spacing: .5em;
+                    text-transform: uppercase;
+                    font-weight: 300;
+                    font-size: 1.2em;
+
+                    &.highlight{
+                        border-color: $highlight-color;
+                    }
+
+                    &.diff{
+                        border-color: $diff-color;
+                    }
+                }
+            }
+        }
+    }
+}
